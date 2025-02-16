@@ -1,0 +1,53 @@
+<!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-white">
+  <body class="h-full">
+  ```
+-->
+<div class="flex flex-col justify-center  items-center  px-6 py-12 lg:px-8">
+  
+    <div class="card bg-base-100 w-full max-w-xl shrink-0 shadow-2xl">
+        <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+            <!-- <img class="mx-auto mt-4 h-10 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company"> -->
+            <h2 class="text-center text-2xl/9 font-bold text-primary tracking-tight text-gray-900">Add a new pack</h2>
+          </div>
+      <form class="space-y-2 card-body" (ngSubmit)="onSubmit()" [formGroup]="packForm">
+        <!-- offer_name -->
+        <div>
+          <label for="offer_name" class="block text-sm/6 font-medium text-gray-900">offer name</label>
+          <div class="mt-2">
+            <input type="text" name="offer_name" id="offer_name" formControlName="offer_name" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+          </div>
+        </div>
+        <!-- end -->
+         <!-- duration_months -->
+        <div>
+          <label for="duration_months" class="block text-sm/6 font-medium text-gray-900">duration_months</label>
+          <div class="mt-2">
+            <input type="text" name="duration_months" id="duration_months" formControlName="duration_months"  required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+          </div>
+        </div>
+        <!-- end -->
+         <!-- monthly_price -->
+        <div>
+          <label for="monthly_price" class="block text-sm/6 font-medium text-gray-900">monthly price</label>
+          <div class="mt-2">
+            <input type="text" name="monthly_price" id="monthly_price" formControlName="monthly_price" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+          </div>
+        </div>
+        <!-- end -->
+
+         
+        <div>
+          <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add</button>
+        </div>
+      </form>
+  
+      <!-- <p class="mt-10 text-center text-sm/6 text-gray-500">
+        Not a member?
+        <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Start a 14 day free trial</a>
+      </p> -->
+    </div>
+  </div>

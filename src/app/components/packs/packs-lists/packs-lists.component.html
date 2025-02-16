@@ -1,0 +1,39 @@
+<!--
+  Heads up! 👋
+
+  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
+-->
+<h1 class="text-2xl font-bold mt-7 mb-7 lg:px-15">Packs list</h1>
+
+<div class="overflow-x-auto table mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-md rounded-lg shadow-2xl">
+      <thead class="ltr:text-left rtl:text-right text-base">
+        <tr>
+          <th class="px-4 py-6 font-medium whitespace-nowrap text-gray-900">Offer name</th>
+          <th class="px-4 py-6 font-medium whitespace-nowrap text-gray-900">Duration months</th>
+          <th class="px-4 py-6 font-medium whitespace-nowrap text-gray-900">Monthly prices</th>
+         
+          <th class="px-2 py-6"></th>
+        </tr>
+      </thead>
+  
+      <tbody class="divide-y divide-gray-200">
+        <tr *ngFor="let pack of packs | async" class="mb-4">
+          <td class="px-4 py-6 font-medium whitespace-nowrap text-gray-900">{{pack.offer_name}}</td>
+          <td class="px-4 py-6 whitespace-nowrap text-gray-700">{{pack.duration_months}}</td>
+          <td class="px-4 py-6 whitespace-nowrap text-gray-700">{{pack.monthly_price}}</td>
+       
+          <td class="px-4 py-6 whitespace-nowrap">
+            
+            <button class="btn btn-warning btn-sm mr-2 text-base-100" (click)="updatePack(pack.id!)"
+            >Update</button>
+            <button class="btn btn-error btn-sm text-base-100" 
+            (click)="deletePack(pack.id!)"
+            >Delete</button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>

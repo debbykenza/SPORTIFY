@@ -1,0 +1,60 @@
+<!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-white">
+  <body class="h-full">
+  ```
+-->
+<div class="flex flex-col justify-center items-center px-6 py-12 lg:px-8">
+  <div class="card bg-base-100 w-full max-w-xl shrink-0 shadow-2xl">
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+      <!-- <img class="mx-auto mt-4 h-10 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company"> -->
+      <h2 class="text-center text-2xl/9 font-bold text-primary tracking-tight text-gray-900">Customers form</h2>
+    </div>
+    <form class="space-y-2 card-body" (ngSubmit)="onSubmit()" [formGroup]="customerForm">
+      <!-- firstname -->
+      <div>
+        <label for="first_name" class="block text-sm/6 font-medium text-gray-900">firstname</label>
+        <div class="mt-2">
+          <input type="text" name="first_name" id="first_name" formControlName="first_name" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+        </div>
+      </div>
+      <!-- end -->
+       <!-- lastname -->
+      <div>
+        <label for="last_name" class="block text-sm/6 font-medium text-gray-900">lastname</label>
+        <div class="mt-2">
+          <input type="text" name="last_name" id="last_name" formControlName="last_name"  required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+        </div>
+      </div>
+      <!-- end -->
+       <!-- registration_date -->
+      <div>
+        <label for="registration_date" class="block text-sm/6 font-medium text-gray-900">registration date</label>
+        <div class="mt-2">
+          <input type="date" name="registration_date" id="registration_date" formControlName="registration_date" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+        </div>
+      </div>
+      <!-- end -->
+
+       <!-- phone_number -->
+      <div>
+        <label for="phone_number" class="block text-sm/6 font-medium text-gray-900">phone number</label>
+        <div class="mt-2">
+          <input type="text" name="phone_number" id="phone_number" formControlName="phone_number" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+        </div>
+      </div>
+      <!-- end -->
+       
+      <div>
+        <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add</button>
+      </div>
+    </form>
+
+    <!-- <p class="mt-10 text-center text-sm/6 text-gray-500">
+      Not a member?
+      <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Start a 14 day free trial</a>
+    </p> -->
+  </div>
+</div>

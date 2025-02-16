@@ -1,0 +1,54 @@
+<!--
+  Heads up! 👋
+
+  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
+-->
+<h1 class="text-2xl font-bold mt-7 mb-7 lg:px-15">Customers list</h1>
+<div class="overflow-x-auto table mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <!-- search bar -->
+  <label class="input input-bordered flex items-center gap-2">
+    <input type="text" class="grow" placeholder="Search" (input)="handleInput($event)"/>
+    <button class="btn btn-ghost rounded-full">
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      fill="currentColor"
+      class="h-4 w-4 opacity-70">
+      <path
+        fill-rule="evenodd"
+        d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+        clip-rule="evenodd" />
+    </svg>
+    </button>
+  </label>
+  <!-- end -->
+    <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-md rounded-lg shadow-2xl">
+      <thead class="ltr:text-left rtl:text-right text-base">
+        <tr>
+          <th class="px-4 py-6 font-medium whitespace-nowrap text-gray-900 ">First name</th>
+          <th class="px-4 py-6 font-medium whitespace-nowrap text-gray-900 ">Last name</th>
+          <th class="px-4 py-6 font-medium whitespace-nowrap text-gray-900 ">Registration date</th>
+          <th class="px-4 py-6 font-medium whitespace-nowrap text-gray-900 ">Phone number</th>
+          <!-- <th class="px-4 py-2 font-medium whitespace-nowrap text-gray-900">Active suscription</th> -->
+          <th class="px-4 py-2"></th>
+        </tr>
+      </thead>
+  
+      <tbody class="divide-y divide-gray-200">
+        <tr *ngFor="let customer of customers | async" class="mb-4">
+          <td class="px-4 py-6 font-medium whitespace-nowrap text-gray-900">{{customer.first_name}}</td>
+          <td class="px-4 py-6 whitespace-nowrap text-gray-700">{{customer.last_name}}</td>
+          <td class="px-4 py-6 whitespace-nowrap text-gray-700">{{customer.registration_date}}</td>
+          <td class="px-4 py-6 whitespace-nowrap text-gray-700">{{customer.phone_number}}</td>
+          <!-- <td class="px-4 py-2 whitespace-nowrap text-gray-700">{{customer.active_suscription}}</td> -->
+          <td class="px-4 py-6 whitespace-nowrap">
+            <button class="btn btn-primary btn-sm mr-2 text-base-100" (click)="subscribeCustomer(customer.id!)">Suscribe</button>
+            <button class="btn btn-warning btn-sm mr-2 text-base-100" (click)="updateCustomer(customer.id!)">Update</button>
+            <button class="btn btn-error btn-sm text-base-100" (click)="deleteCustomer(customer.id!)">Delete</button>
+          </td>
+          
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
